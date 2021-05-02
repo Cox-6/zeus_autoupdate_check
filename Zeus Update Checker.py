@@ -10,7 +10,7 @@ while True:
     os.system('cls')
     named_tuple = time.localtime()
     time_string = time.strftime("%H:%M:%S, %m/%d/%Y", named_tuple)
-    r = requests.get("https://pastebin.com/raw/mk58VnNC")
+    r = requests.get(environ['PASTEBIN'])
     version = r.text
     if version !=  currentversion:
         content = "Zeus has updated to version " + str(r.text) + " at " + str(time_string)
