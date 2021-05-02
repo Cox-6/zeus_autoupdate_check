@@ -12,6 +12,7 @@ datatest = {
                 'content': "I'm online!"
                 }
 test = requests.post(environ['WEBHOOK'], data=currentversion)
+print(" Checking if Zeus has updated!")
 while True:
     os.system('cls')
     named_tuple = time.localtime()
@@ -19,6 +20,7 @@ while True:
     r = requests.get(environ['PASTEBIN'])
     version = r.text
     if version !=  currentversion:
+        print(colorama.Fore.RED + "["  + str(time_string)  + "]" + colorama.Fore.WHITE + " Zeus updated to version " + str(r.text) + " at " + str(time_string))
         content = "Zeus has updated to version " + str(r.text) + " at " + str(time_string)
         data = {
                 'username': 'Zeus Update Checker',
@@ -28,5 +30,5 @@ while True:
         r = requests.post(environ['WEBHOOK'], data=data)
         currentversion = version
     else:
-        pass
+        print(colorama.Fore.GREEN + "["  + str(time_string)  + "]" + colorama.Fore.WHITE + " Checking if Zeus has updated!")
         time.sleep(10)
