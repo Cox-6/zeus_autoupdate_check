@@ -6,6 +6,12 @@ from os import environ
 colorama.init(convert=True)
 os.system('cls')
 currentversion = "0.3.5"
+datatest = {
+                'username': 'Zeus Update Checker',
+                'avatar_url': 'https://rblxexploits.com/assets/images/zeuspicnew-320x180.png',
+                'content': "I'm online!"
+                }
+test = requests.post(environ['WEBHOOK'], data=currentversion)
 while True:
     os.system('cls')
     named_tuple = time.localtime()
