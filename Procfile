@@ -1,0 +1,1 @@
+worker: python Zeus Update Checker.py
